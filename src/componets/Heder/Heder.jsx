@@ -4,7 +4,7 @@ const Heder = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <nav className="bg-white shadow-lg">
+    <nav className="bg-white shadow-lg sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           {/* Logo/Brand */}
@@ -18,19 +18,19 @@ const Heder = () => {
           <div className="hidden md:flex items-center space-x-8">
             {/* Main Navigation */}
             <div className="flex space-x-6">
-              <a href="#" className="text-gray-800 hover:text-blue-600 px-3 py-2 text-sm font-medium border-b-2 border-blue-600">
+              <a href="# Home" className="text-gray-800 hover:text-blue-600 px-3 py-2 text-sm font-medium ">
                 Home
               </a>
-              <a href="#" className="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium border-b-2 border-gray-300 hover:border-blue-600">
+              <a href="#" className="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium">
                 Products
               </a>
-              <a href="#" className="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium border-b-2 border-gray-300 hover:border-blue-600">
+              <a href="#" className="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium">
                 Categories
               </a>
-              <a href="#" className="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium border-b-2 border-gray-300 hover:border-blue-600">
+              <a href="#" className="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium  ">
                 About
               </a>
-              <a href="#" className="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium border-b-2 border-gray-300 hover:border-blue-600">
+              <a href="#" className="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium">
                 Contact
               </a>
             </div>

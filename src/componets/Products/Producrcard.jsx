@@ -6,6 +6,7 @@ const ProductCard = ({ product }) => {
   return (
     <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
       <div className="flex flex-col space-y-4">
+        
         <img
           src={product.thumbnail}
           alt={product.title}
