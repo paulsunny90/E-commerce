@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
 
 const ProductCard = ({ product }) => {
   return (
@@ -20,13 +22,12 @@ const ProductCard = ({ product }) => {
             <span className="text-xl font-bold text-blue-600">
               ${product.price}
             </span>
-            <div className={`px-3 py-1 rounded-full text-xs font-medium ${
-              product.rating >= 4.5
+            <div className={`px-3 py-1 rounded-full text-xs font-medium ${product.rating >= 4.5
                 ? 'bg-green-100 text-green-800'
                 : product.rating >= 4.0
-                ? 'bg-yellow-100 text-yellow-800'
-                : 'bg-red-100 text-red-800'
-            }`}>
+                  ? 'bg-yellow-100 text-yellow-800'
+                  : 'bg-red-100 text-red-800'
+              }`}>
               ★ {product.rating}
             </div>
           </div>
@@ -34,6 +35,11 @@ const ProductCard = ({ product }) => {
         <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors">
           Add to Cart
         </button>
+        <Link to={`/products/${products.id}`}>
+          <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors">
+            viwe Details
+          </button>
+        </Link>
       </div>
     </div>
   )
