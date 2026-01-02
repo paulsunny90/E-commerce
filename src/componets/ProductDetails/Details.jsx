@@ -5,6 +5,7 @@ import axios from 'axios'
 const Details = () => {
   const { id } = useParams()
   const [product, setProduct] = useState(null)
+  const [loading, setLoading] = useState(true)
   const [selectedImage, setSelectedImage] = useState(0)
 
   useEffect(() => {
@@ -12,10 +13,10 @@ const Details = () => {
       try {
         const response = await axios.get(`https://dummyjson.com/products/${id}`)
         setProduct(response.data)
-      
+        setLoading(false)
       } catch (error) {
         console.error('Error fetching product:', error)
-       
+        setLoading(false)
       }
     }
 
@@ -23,6 +24,26 @@ const Details = () => {
       fetchProduct()
     }
   }, [id])
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+      </div>
+    )
+  }
+
+  if (!product) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <h2 className="text-2xl font-bold text-gray-900 mb-2">Product Not Found</h2>
+          <p className="text-gray-600">The product you're looking for doesn't exist.</p>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
