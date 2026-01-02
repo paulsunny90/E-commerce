@@ -31,8 +31,8 @@ function App() {
       <BrowserRouter>
       <Header />
       <Routes>
-        <Route path='\'  element={<Home products={products} />} />
-        <Route  path='\products:id' element={<Details/>}/>
+        <Route path='/' element={<Home products={products} />} />
+        <Route path='/products/:id' element={<Details />} />
       </Routes>
       <Footer />
       </BrowserRouter>

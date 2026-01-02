@@ -35,9 +35,9 @@ const ProductCard = ({ product }) => {
         <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors">
           Add to Cart
         </button>
-        <Link to={`/products/${products.id}`}>
+        <Link to={`/products/${product.id}`}>
           <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors">
-            viwe Details
+            View Details
           </button>
         </Link>
       </div>
