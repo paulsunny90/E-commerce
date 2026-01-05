@@ -1,24 +1,17 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect,useContext } from 'react'
 import { useParams } from 'react-router-dom'
-import axios from 'axios'
+import { ProductContext } from '../Context/Context.jsx'
 
 const Details = () => {
   const { id } = useParams()
-  const [product, setProduct] = useState(null)
+  const {product, fetchProduct} = useContext (ProductContext);
+  console.log(product);
   const [selectedImage, setSelectedImage] = useState(0)
 
   useEffect(() => {
-    const fetchProduct = async () => {
-      try {
-        const response = await axios.get(`https://dummyjson.com/products/${id}`)
-        setProduct(response.data)
-      } catch (error) {
-        console.error('Error fetching product:', error)
-      }
-    }
-
+   
     if (id) {
-      fetchProduct()
+      fetchProduct(id);
     }
   }, [id])
 
