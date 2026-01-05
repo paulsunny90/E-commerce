@@ -1,7 +1,9 @@
-import React from 'react'
+import { useContext } from 'react';
 import ProductCard from '../componets/Products/Producrcard.jsx'
+import {ProductContext} from '../componets/Context/Context.jsx';
 
-const Home = ({ products }) => {
+const Home = () => {
+  const { products } = useContext(ProductContext);
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
         <h2 className="text-2xl font-bold text-gray-900 mb-6">Products</h2>
@@ -14,4 +16,6 @@ const Home = ({ products }) => {
   )
 }
 
+
 export default Home
+
