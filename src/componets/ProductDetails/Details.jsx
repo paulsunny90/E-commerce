@@ -1,9 +1,11 @@
 import React, { useState, useEffect,useContext } from 'react'
 import { useParams } from 'react-router-dom'
 import { ProductContext } from '../Context/Context.jsx'
+import {CartContext}  from '../Context/CartContext.jsx'
 
 const Details = () => {
   const { id } = useParams()
+ const { addToCart } = useContext(CartContext);
   const {product, fetchProduct} = useContext (ProductContext);
   console.log(product);
   const [selectedImage, setSelectedImage] = useState(0)
@@ -117,7 +119,7 @@ const Details = () => {
             <div className="flex space-x-3">
               <button
                 className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                disabled={product.stock === 0}
+                onClick={() => {addToCart(product)}}
               >
                 Add to Cart
               </button>

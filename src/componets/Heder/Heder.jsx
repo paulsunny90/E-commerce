@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+import Addtocart from './Addtocart'
+import { Link } from 'react-router-dom'
+
 
 const Heder = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -18,7 +21,7 @@ const Heder = () => {
           <div className="hidden md:flex items-center space-x-8">
             {/* Main Navigation */}
             <div className="flex space-x-6">
-              <a href="/" className="text-gray-800 hover:text-blue-600 px-3 py-2 text-sm font-medium ">
+              <a href="/"  className="text-gray-800 hover:text-blue-600 px-3 py-2 text-sm font-medium ">
                 Home
               </a>
               <a href="#" className="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium">
@@ -37,9 +40,9 @@ const Heder = () => {
 
             {/* User Actions */}
             <div className="flex items-center space-x-4">
-              <a href="#" className="flex items-center text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">
-                <i className="fas fa-shopping-cart mr-2"></i>
-                Cart (0)
+              <a href="/addtocart" className="flex items-center text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">
+                <button ><i className="fas fa-shopping-cart mr-2"></i>
+                Cart (0)</button>
               </a>
               <a href="#" className="flex items-center text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">
                 <i className="fas fa-user mr-2"></i>
@@ -90,10 +93,13 @@ const Heder = () => {
               Contact
             </a>
             <div className="border-t border-gray-200 pt-4 mt-4">
+              <Link to="/addtocart">
               <a href="#" className="flex items-center text-gray-600 hover:text-blue-600 px-3 py-2 text-base font-medium">
                 <i className="fas fa-shopping-cart mr-2"></i>
                 Cart (0)
               </a>
+              </Link>
+
               <a href="#" className="flex items-center text-gray-600 hover:text-blue-600 px-3 py-2 text-base font-medium">
                 <i className="fas fa-user mr-2"></i>
                 Login
